@@ -5,3 +5,9 @@ pypdf
 langchain
 langchain-community
 google-generativeai
+sentence-transformers
+pandas
+numpy
+rapidfuzz
+faster-whisper
+soundfile

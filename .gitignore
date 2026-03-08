@@ -1,0 +1,18 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+.env/
+
+# Environment variables
+.env
+
+# Generated index files
+data/index/
+
+# OS / editor files
+.DS_Store
+.vscode/
+.idea/

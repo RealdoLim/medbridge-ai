@@ -1,0 +1,41 @@
+dialect,utterance,standard_malay,english,intent
+kelantan,mano nak gi klinik?,macam mana nak pergi klinik?,how do I go to the clinic?,clinic_services
+kelantan,klinik buka pukul berapo?,klinik buka pukul berapa?,what time does the clinic open?,clinic_services
+kelantan,ado vaksin covid dok?,ada vaksin covid?,is covid vaccine available?,vaccines
+kelantan,boleh suntik vaksin sini dok?,boleh ambil vaksin di sini?,can I get a vaccine here?,vaccines
+kelantan,ado rawatan kesihatan mental dok?,ada rawatan kesihatan mental?,is mental health treatment available?,mental_health
+kelantan,ado kaunseling tekanan dok?,ada kaunseling tekanan?,is stress counselling available?,mental_health
+kelantan,boleh jumpa doktor online dok?,boleh jumpa doktor secara online?,can I see a doctor online?,telehealth
+kelantan,ado telehealth dok?,ada perkhidmatan telehealth?,is telehealth available?,telehealth
+kelantan,cam mano nak buat temujanji?,macam mana nak buat temujanji?,how do I make an appointment?,appointment
+kelantan,boleh walk in dok?,boleh datang tanpa temujanji?,can I walk in without appointment?,appointment
+kelantan,keno bawok dokumen apo?,perlu bawa dokumen apa?,what documents do I need?,documents_needed
+kelantan,keno bawok kad pengenalan dok?,perlu bawa kad pengenalan?,do I need to bring an ID card?,documents_needed
+kelantan,keno bayar berapo?,perlu bayar berapa?,how much do I need to pay?,cost_payment
+kelantan,rawatan sini percumo dok?,rawatan di sini percuma?,is treatment here free?,cost_payment
+kelantan,sapo boleh gi klinik ni?,siapa layak pergi klinik ini?,who can go to this clinic?,eligibility
+kelantan,orang luar boleh gi dok?,orang luar boleh pergi?,can foreigners go?,eligibility
+kelantan,ado suntikan demam kuning dok?,ada suntikan demam kuning?,is yellow fever vaccine available?,vaccines
+kelantan,ado suntikan influenza dok?,ada suntikan influenza?,is flu vaccine available?,vaccines
+kelantan,ado pemeriksaan kesihatan dok?,ada pemeriksaan kesihatan?,are health screenings available?,clinic_services
+kelantan,klinik ni bukok hari minggu dok?,klinik ini buka hari minggu?,is the clinic open on weekends?,clinic_services
+sabah,boleh saya pergi klinik sini ka?,boleh saya pergi ke klinik ini?,can I go to this clinic?,clinic_services
+sabah,klinik buka jam berapa bah?,klinik buka pukul berapa?,what time does the clinic open?,clinic_services
+sabah,ada vaksin covid ka?,ada vaksin covid?,is covid vaccine available?,vaccines
+sabah,boleh ambil vaksin sini ka?,boleh ambil vaksin di sini?,can I get a vaccine here?,vaccines
+sabah,ada rawatan kesihatan mental ka?,ada rawatan kesihatan mental?,is mental health treatment available?,mental_health
+sabah,ada kaunseling tekanan ka?,ada kaunseling tekanan?,is stress counselling available?,mental_health
+sabah,boleh jumpa doktor online ka?,boleh jumpa doktor secara online?,can I see a doctor online?,telehealth
+sabah,ada telehealth ka?,ada perkhidmatan telehealth?,is telehealth available?,telehealth
+sabah,macam mana mau buat appointment?,macam mana nak buat temujanji?,how do I make an appointment?,appointment
+sabah,boleh walk in ka?,boleh datang tanpa temujanji?,can I walk in without appointment?,appointment
+sabah,perlu bawa dokumen apa bah?,perlu bawa dokumen apa?,what documents do I need?,documents_needed
+sabah,perlu bawa IC ka?,perlu bawa kad pengenalan?,do I need to bring ID card?,documents_needed
+sabah,perlu bayar berapa bah?,perlu bayar berapa?,how much do I need to pay?,cost_payment
+sabah,rawatan sini percuma ka?,rawatan di sini percuma?,is treatment here free?,cost_payment
+sabah,siapa boleh guna klinik ini?,siapa layak pergi klinik ini?,who is eligible for this clinic?,eligibility
+sabah,orang luar boleh datang ka?,orang luar boleh datang?,can foreigners come?,eligibility
+sabah,ada vaksin influenza ka?,ada vaksin influenza?,is flu vaccine available?,vaccines
+sabah,ada suntikan demam kuning ka?,ada suntikan demam kuning?,is yellow fever vaccine available?,vaccines
+sabah,ada pemeriksaan kesihatan ka?,ada pemeriksaan kesihatan?,are health screenings available?,clinic_services
+sabah,klinik buka hujung minggu ka?,klinik buka hujung minggu?,is the clinic open on weekends?,clinic_services

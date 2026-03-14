@@ -21,5 +21,5 @@ streamlit run app.py
 
 
 # References
-Anything Translate. (2024, December 21). Sabah Malay Translator | Free & AI-Powered. https://anythingtranslate.com/translators/sabah-malay-translator/ \n
+Anything Translate. (2024, December 21). Sabah Malay Translator | Free & AI-Powered. https://anythingtranslate.com/translators/sabah-malay-translator/ <br />
 KelantanLingo. (n.d.). KelantanLingo - Learn Kelantanese Dialect. https://www.kelantanlingo.com/#translator

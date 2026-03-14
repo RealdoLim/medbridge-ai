@@ -12,6 +12,60 @@ load_dotenv()
 st.set_page_config(page_title="MedBridge AI", layout="wide")
 st.title("MedBridge AI — Dialect-Aware Health Assistant")
 
+# UI Improvements
+st.markdown("""
+            <style>
+            /* Main page padding */
+            .block-container {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+
+            /* Title styling */
+            h1 {
+                font-size: 2.2rem;
+                font-weight: 700;
+            }
+            
+            /* Section headers */
+            h2 {
+                font-size: 1.5rem;
+                margin-top: 1.5rem;
+            }
+
+            /* Card style container */
+            .card {
+                background-color: #1e293b;
+                padding: 22px;
+                border-radius: 14px;
+                border: 1px solid #374151;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            /* Button styling */
+            .stButton>button {
+                width: 100%;
+                border-radius: 10px;
+                font-weight: 600;
+                padding: 10px;
+            }
+
+            /* Sidebar header */
+            section[data-testid="stSidebar"] h2 {
+                font-size: 1.2rem;
+            }
+
+                /* Expander styling */
+                .streamlit-expanderHeader {
+                font-weight: 600;
+            }
+
+                </style>
+            """, unsafe_allow_html=True)
+
+
+
 
 @st.cache_data
 def load_phrasebank():
@@ -135,7 +189,18 @@ if run_button:
         )
 
     st.subheader("We interpreted your dialect as:")
-    st.write(interpreted_query)
+
+    st.markdown(f"""
+                <div style="
+                background:#1e293b;
+                padding:16px;
+                border-radius:10px;
+                border:1px solid #374151;
+                margin-bottom:20px;
+                font-size:16px;">
+                {interpreted_query}
+                </div>
+                """, unsafe_allow_html=True)
 
     if reply_in_dialect and dialect_mode != "OFF":
         st.info(f"Final answer will be rewritten into {dialect_mode} dialect.")
@@ -178,14 +243,26 @@ if run_button:
             simplified_answer = translate_text(simplified_answer, "English")
             action_steps = translate_text(action_steps, "English")
 
-    st.subheader("Grounded Answer")
-    st.write(grounded_answer)
+    st.markdown(f"""
+            <div class="card">
+            <h3>🧠 Grounded Answer</h3>
+            <p>{grounded_answer}</p>
+            </div>
+            """, unsafe_allow_html=True)
 
-    st.subheader("Simplified Answer")
-    st.write(simplified_answer)
+    st.markdown(f"""
+                <div class="card">
+                <h3>💡 Simplified Answer</h3>
+                <p>{simplified_answer}</p>
+                </div>
+                """, unsafe_allow_html=True)
 
-    st.subheader("Action Steps")
-    st.markdown(action_steps)
+    st.markdown(f"""
+                <div class="card">
+                <h3>⚡ Action Steps</h3>
+                <p>{action_steps}</p>
+                </div>
+                """, unsafe_allow_html=True)
 
     st.subheader("Sources Used")
     for i, item in enumerate(result["source_snippets"], start=1):

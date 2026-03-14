@@ -18,3 +18,8 @@ streamlit run app.py
 =======
 # medbridge-ai
 >>>>>>> 1afab4b7d79576b5f910f7b2ad28e9d1b509b128
+
+
+Reference
+Anything Translate. (2024, December 21). Sabah Malay Translator | Free & AI-Powered. https://anythingtranslate.com/translators/sabah-malay-translator/
+KelantanLingo. (n.d.). KelantanLingo - Learn Kelantanese Dialect. https://www.kelantanlingo.com/#translator

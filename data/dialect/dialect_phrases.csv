@@ -19,6 +19,7 @@ kelantan,ado suntikan demam kuning dok?,ada suntikan demam kuning?,is yellow fev
 kelantan,ado suntikan influenza dok?,ada suntikan influenza?,is flu vaccine available?,vaccines
 kelantan,ado pemeriksaan kesihatan dok?,ada pemeriksaan kesihatan?,are health screenings available?,clinic_services
 kelantan,klinik ni bukok hari minggu dok?,klinik ini buka hari minggu?,is the clinic open on weekends?,clinic_services
+
 sabah,boleh saya pergi klinik sini ka?,boleh saya pergi ke klinik ini?,can I go to this clinic?,clinic_services
 sabah,klinik buka jam berapa bah?,klinik buka pukul berapa?,what time does the clinic open?,clinic_services
 sabah,ada vaksin covid ka?,ada vaksin covid?,is covid vaccine available?,vaccines
@@ -39,3 +40,243 @@ sabah,ada vaksin influenza ka?,ada vaksin influenza?,is flu vaccine available?,v
 sabah,ada suntikan demam kuning ka?,ada suntikan demam kuning?,is yellow fever vaccine available?,vaccines
 sabah,ada pemeriksaan kesihatan ka?,ada pemeriksaan kesihatan?,are health screenings available?,clinic_services
 sabah,klinik buka hujung minggu ka?,klinik buka hujung minggu?,is the clinic open on weekends?,clinic_services
+
+
+
+kelantan,ada doktor pakar dok?,ada doktor pakar?,is there a specialist doctor?,clinic_services
+kelantan,keno bayor ubat berapo?,perlu bayar ubat berapa?,how much to pay for medicine?,cost_payment
+kelantan,mano nak beli ubat?,macam mana nak beli ubat?,how to buy medicine?,clinic_services
+kelantan,sakit kepalo dok?,sakit kepala?,headache?,symptoms
+kelantan,demam berapo hari?,demam berapa hari?,fever for how many days?,symptoms
+kelantan,boleh temujanji online dok?,boleh temujanji online?,can I book appointment online?,appointment
+kelantan,ado ubat batuk dok?,ada ubat batuk?,is there cough medicine?,clinic_services
+kelantan,ado ubat sakit gigi dok?,ada ubat sakit gigi?,is there medicine for toothache?,medications
+kelantan,keno bawok kad bank dok?,perlu bawa kad bank?,do I need bank card?,documents_needed
+kelantan,klinik tutop pukul apo?,klinik tutup pukul berapa?,what time does clinic close?,clinic_services
+kelantan,ado ambulans dok?,ada ambulans?,is ambulance available?,clinic_services
+kelantan,keno ambil cuti sakit dok?,perlu ambil cuti sakit?,need sick leave?,documents_needed
+kelantan,anak kono sakit perot dok?,anak saya sakit perut?,my child has stomachache?,symptoms
+kelantan,mano nak panggil doktor rumah?,macam mana panggil doktor rumah?,how to call house doctor?,clinic_services
+kelantan,ado rawatan gigi percuma dok?,ada rawatan gigi percuma?,is dental free?,cost_payment
+kelantan,demam tinggi dok?,demam tinggi?,high fever?,symptoms
+kelantan,boleh check darah dok?,boleh check darah?,can do blood test?,clinic_services
+kelantan,keno tunggu berapo jam dok?,perlu tunggu berapa jam?,how long to wait?,appointment
+kelantan,ado doktor kanak kanak dok?,ada doktor kanak-kanak?,is there pediatrician?,clinic_services
+kelantan,sakit tekak dok?,sakit tekak?,sore throat?,symptoms
+kelantan,ubat ni keno minom apo dok?,ubat ni perlu minum apa?,how to take this medicine?,medications
+kelantan,klinik ada xray dok?,klinik ada xray?,does clinic have x-ray?,clinic_services
+kelantan,orang tua boleh jumpa dok?,orang tua boleh jumpa?,can elderly visit?,eligibility
+kelantan,ado suntikan tetanus dok?,ada suntikan tetanus?,is tetanus shot available?,vaccines
+kelantan,batuk kering berapo minggu dok?,batuk kering berapa minggu?,dry cough for weeks?,symptoms
+kelantan,boleh bayor guna kad kaedah dok?,boleh bayar guna kad kredit?,can pay with credit card?,cost_payment
+kelantan,mano nak renew resip dok?,macam mana renew resip?,how to renew prescription?,medications
+kelantan,ado kaunseling keluarga dok?,ada kaunseling keluarga?,is family counseling available?,mental_health
+kelantan,kaki bengkak dok?,kaki bengkak?,swollen feet?,symptoms
+kelantan,klinik buka hari raya dok?,klinik buka hari raya?,open on holidays?,clinic_services
+kelantan,perlu test alahan dok?,perlu test alahan?,need allergy test?,clinic_services
+kelantan,ado ubat tekanan darah dok?,ada ubat tekanan darah?,blood pressure meds available?,medications
+kelantan,boleh bawa bayi baru lahir dok?,boleh bawa bayi baru lahir?,can bring newborn?,eligibility
+kelantan,sakit mata dok?,sakit mata?,eye pain?,symptoms
+kelantan,keno daftar awal dok?,perlu daftar awal?,need to register early?,appointment
+kelantan,ado perkhidmatan farmasi dok?,ada perkhidmatan farmasi?,pharmacy service available?,clinic_services
+kelantan,muntah berulang dok?,muntah berulang?,repeated vomiting?,symptoms
+kelantan,rawatan mata percuma dok?,rawatan mata percuma?,free eye treatment?,cost_payment
+kelantan,doktor oncall malam dok?,doktor oncall malam?,night on-call doctor?,clinic_services
+kelantan,ado vaksin HPV dok?,ada vaksin HPV?,HPV vaccine available?,vaccines
+kelantan,ado doktor mata dok?,ada doktor mata?,is there eye doctor?,clinic_services
+kelantan,sakit urat dok?,sakit urat?,muscle pain?,symptoms
+kelantan,keno ambil ubat lepas tu dok?,perlu ambil ubat selepas itu?,need to take medicine later?,medications
+kelantan,anak kono demam berdarah dok?,anak saya demam berdarah?,my child has dengue?,symptoms
+kelantan,boleh test kencing dok?,boleh test kencing?,can do urine test?,clinic_services
+kelantan,ado rawatan kulit dok?,ada rawatan kulit?,skin treatment available?,clinic_services
+kelantan,keno bayar tunai dok?,perlu bayar tunai?,need to pay cash?,cost_payment
+kelantan,mano nak check tekanan darah?,macam mana check tekanan darah?,how to check blood pressure?,clinic_services
+kelantan,sakit tulang belakang dok?,sakit tulang belakang?,back pain?,symptoms
+kelantan,ado ubat alahan dok?,ada ubat alahan?,allergy medicine?,medications
+kelantan,boleh bawa lebih seorang dok?,boleh bawa lebih seorang?,can bring someone extra?,eligibility
+kelantan,klinik ada ultrasound dok?,klinik ada ultrasound?,has ultrasound?,clinic_services
+kelantan,keno jumpa doktor perubatan dok?,perlu jumpa doktor perubatan?,need to see GP?,appointment
+kelantan,ado suntikan pneumonia dok?,ada suntikan pneumonia?,pneumonia vaccine?,vaccines
+kelantan,muka merah dok?,muka merah?,face rash?,symptoms
+kelantan,ubat keno simpan macam mana dok?,ubat perlu simpan macam mana?,how to store medicine?,medications
+kelantan,ado kaunseling anak dok?,ada kaunseling anak?,child counseling?,mental_health
+kelantan,klinik buka pagi awal dok?,klinik buka pagi awal?,early morning open?,clinic_services
+kelantan,perlu puasa test gula dok?,perlu puasa test gula?,need fasting for sugar test?,clinic_services
+kelantan,sakit gigi berlubang dok?,sakit gigi berlubang?,tooth cavity pain?,symptoms
+kelantan,boleh claim insurans dok?,boleh claim insurans?,can claim insurance?,cost_payment
+kelantan,ado doktor sakit wanita dok?,ada doktor sakit wanita?,gynecologist?,clinic_services
+kelantan,keno bawa resip lama dok?,perlu bawa resip lama?,need old prescription?,documents_needed
+kelantan,tangan kebas dok?,tangan kebas?,numb hands?,symptoms
+kelantan,ado perkhidmatan fisioterapi dok?,ada perkhidmatan fisioterapi?,physiotherapy available?,clinic_services
+kelantan,batuk berdarah dok?,batuk berdarah?,coughing blood?,symptoms
+kelantan,keno temujanji doktor pakar dok?,perlu temujanji doktor pakar?,need specialist appointment?,appointment
+kelantan,ado ubat diabetes dok?,ada ubat diabetes?,diabetes medicine?,medications
+kelantan,klinik ada kerusi roda dok?,klinik ada kerusi roda?,wheelchair available?,clinic_services
+kelantan,ado vaksin hepatitis dok?,ada vaksin hepatitis?,hepatitis vaccine?,vaccines
+kelantan,ado doktor pakar jantung dok?,ada doktor pakar jantung?,is there heart specialist?,clinic_services
+kelantan,sakit kepala pening dok?,sakit kepala pening?,dizzy headache?,symptoms
+kelantan,keno vaksin flu tahunan dok?,perlu vaksin flu tahunan?,need yearly flu vaccine?,vaccines
+kelantan,anak kono kembung perot dok?,anak saya kembung perut?,child bloated stomach?,symptoms
+kelantan,boleh buat ECG dok?,boleh buat ECG?,can do ECG?,clinic_services
+kelantan,ado rawatan jerawat dok?,ada rawatan jerawat?,acne treatment available?,clinic_services
+kelantan,keno bayar ansur dok?,perlu bayar ansuran?,need installment payment?,cost_payment
+kelantan,mano nak test HIV?,macam mana test HIV?,how to test HIV?,clinic_services
+kelantan,sakit buku lali dok?,sakit buku lali?,elbow pain?,symptoms
+kelantan,ado ubat cirit birit dok?,ada ubat cirit-birit?,diarrhea medicine?,medications
+kelantan,boleh bawa cikgu dok?,boleh bawa cikgu?,can bring teacher?,eligibility
+kelantan,klinik ada EKG dok?,klinik ada EKG?,has EKG machine?,clinic_services
+kelantan,keno dapat surat rujukan dok?,perlu dapat surat rujukan?,need referral letter?,documents_needed
+kelantan,ado suntikan shingle dok?,ada suntikan shingles?,shingles vaccine?,vaccines
+kelantan,hidung berair dok?,hidung berair?,runny nose?,symptoms
+kelantan,ubat keno makan sebelum tidur dok?,ubat perlu makan sebelum tidur?,take medicine before sleep?,medications
+kelantan,ado terapi okupasi dok?,ada terapi okupasi?,occupational therapy?,clinic_services
+kelantan,klinik buka tengah malam dok?,klinik buka tengah malam?,open midnight?,clinic_services
+kelantan,perlu test mata tahunan dok?,perlu test mata tahunan?,need yearly eye test?,clinic_services
+kelantan,sakit leher dok?,sakit leher?,neck pain?,symptoms
+kelantan,boleh bayar guna Touch n Go dok?,boleh bayar guna Touch n Go?,can pay Touch n Go?,cost_payment
+kelantan,ado doktor pakar kulit dok?,ada doktor pakar kulit?,dermatologist?,clinic_services
+kelantan,keno bawa rekod vaksin dok?,perlu bawa rekod vaksin?,need vaccine record?,documents_needed
+kelantan,kaki kramp dok?,kaki kramp?,leg cramps?,symptoms
+kelantan,ado rawatan akupunktur dok?,ada rawatan akupunktur?,acupuncture available?,clinic_services
+kelantan,mual muntah dok?,mual muntah?,nausea vomiting?,symptoms
+kelantan,keno jumpa doktor pagi esok dok?,perlu jumpa doktor pagi esok?,see doctor tomorrow morning?,appointment
+kelantan,ado ubat kolesterol dok?,ada ubat kolesterol?,cholesterol medicine?,medications
+kelantan,klinik ada parking dok?,klinik ada parking?,has parking?,clinic_services
+kelantan,ado vaksin rabies dok?,ada vaksin rabies?,rabies vaccine?,vaccines
+kelantan,ado doktor pakar tiroid dok?,ada doktor pakar tiroid?,thyroid specialist?,clinic_services
+kelantan,sakit telinga dok?,sakit telinga?,ear pain?,symptoms
+kelantan,keno test darah penuh dok?,perlu test darah penuh?,need full blood test?,clinic_services
+kelantan,anak kono asma dok?,anak saya asma?,child asthma?,symptoms
+kelantan,boleh buat scan tulang dok?,boleh buat scan tulang?,can do bone scan?,clinic_services
+kelantan,ado rawatan rambut gugur dok?,ada rawatan rambut gugur?,hair loss treatment?,clinic_services
+kelantan,keno bayar online banking dok?,perlu bayar online banking?,need online banking payment?,cost_payment
+kelantan,mano nak test kanser serviks?,macam mana test kanser serviks?,how to test cervical cancer?,clinic_services
+kelantan,sakit pergelangan tangan dok?,sakit pergelangan tangan?,wrist pain?,symptoms
+kelantan,ado ubat sakit sendi dok?,ada ubat sakit sendi?,joint pain medicine?,medications
+kelantan,boleh bawa pakcik dok?,boleh bawa pakcik?,can bring uncle?,eligibility
+kelantan,klinik ada defibrillator dok?,klinik ada defibrillator?,has defibrillator?,clinic_services
+kelantan,keno dapat MC sehari dok?,perlu dapat MC sehari?,need 1 day MC?,documents_needed
+kelantan,ado suntikan HPV lelaki dok?,ada suntikan HPV lelaki?,HPV vaccine for men?,vaccines
+kelantan,gatal seluruh badan dok?,gatal seluruh badan?,itchy all over?,symptoms
+kelantan,ubat keno ambil 3 kali sehari dok?,ubat perlu ambil 3 kali sehari?,take medicine 3x day?,medications
+kelantan,ado kaunseling pencen dok?,ada kaunseling pencen?,retirement counseling?,mental_health
+kelantan,klinik buka hari sabtu dok?,klinik buka hari sabtu?,open saturday?,clinic_services
+
+sabah,klinik tutup jam apo bah?,klinik tutup pukul berapa?,what time does clinic close?,clinic_services
+sabah,bulih walk in ka?,boleh walk in?,can I walk in?,appointment
+sabah,ado ubat demam ka?,ada ubat demam?,is there fever medicine?,clinic_services
+sabah,sakit perot bah?,sakit perut?,stomachache?,symptoms
+sabah,bulih bayor online ka?,boleh bayar online?,can I pay online?,cost_payment
+sabah,mau jumpa doktor pakar ka?,nak jumpa doktor pakar?,want to see specialist?,clinic_services
+sabah,keno bawa kad kesihatan?,perlu bawa kad kesihatan?,need health card?,documents_needed
+sabah,ado doktor gigi ka?,ada doktor gigi?,is there dentist?,clinic_services
+sabah,telehealth bulih guna ka?,telehealth boleh guna?,can use telehealth?,telehealth
+sabah,klinik buka malam ka?,klinik buka malam?,is clinic open at night?,clinic_services
+sabah,ado ubat sakit gigi ka?,ada ubat sakit gigi?,toothache medicine available?,medications
+sabah,keno ambil MC bah?,perlu ambil MC?,need medical certificate?,documents_needed
+sabah,anak sakit demam bah?,anak sakit demam?,child has fever?,symptoms
+sabah,macam mana panggil doktor ka?,macam mana panggil doktor?,how to call doctor?,clinic_services
+sabah,rawatan gigi free ka?,rawatan gigi percuma?,dental free?,cost_payment
+sabah,demam panas bah?,demam tinggi?,high fever?,symptoms
+sabah,bulih buat blood test ka?,boleh buat blood test?,can do blood test?,clinic_services
+sabah,tunggu lama bah?,tunggu lama?,long wait?,appointment
+sabah,ada doktor anak ka?,ada doktor kanak-kanak?,pediatrician available?,clinic_services
+sabah,sakit tekak ka?,sakit tekak?,sore throat?,symptoms
+sabah,ubat ni makan macam mana bah?,ubat ni minum macam mana?,how to take medicine?,medications
+sabah,klinik ada xray ka?,klinik ada xray?,x-ray available?,clinic_services
+sabah,nenek boleh datang ka?,orang tua boleh datang?,can elderly come?,eligibility
+sabah,ada suntik tetanus ka?,ada suntikan tetanus?,tetanus shot available?,vaccines
+sabah,batuk lama bah?,batuk lama?,long cough?,symptoms
+sabah,bayor guna kad ka?,bayar guna kad?,pay with card?,cost_payment
+sabah,renew resip macam mana?,renew resip macam mana?,how to renew prescription?,medications
+sabah,ada kaunsel keluarga ka?,ada kaunseling keluarga?,family counseling?,mental_health
+sabah,kaki bengkau bah?,kaki bengkak?,swollen legs?,symptoms
+sabah,buka hari raya ka?,buka hari raya?,open on holidays?,clinic_services
+sabah,test alahan bulih ka?,test alahan boleh?,allergy test possible?,clinic_services
+sabah,ubat darah tinggi ka?,ubat tekanan darah?,high blood pressure meds?,medications
+sabah,boleh bawa baby ka?,boleh bawa bayi?,can bring baby?,eligibility
+sabah,mata merah bah?,sakit mata?,red eyes?,symptoms
+sabah,daftar pagi ka?,daftar awal?,register early?,appointment
+sabah,ada farmasi ka?,ada farmasi?,pharmacy here?,clinic_services
+sabah,muntah banyak bah?,muntah banyak?,lots of vomiting?,symptoms
+sabah,mata free ka?,rawatan mata percuma?,free eye care?,cost_payment
+sabah,doktor malam ada ka?,doktor malam ada?,night doctor available?,clinic_services
+sabah,vaksin HPV ada ka?,ada vaksin HPV?,HPV vaccine?,vaccines
+sabah,ado doktor mata ka?,ada doktor mata?,eye doctor?,clinic_services
+sabah,sakit urat bah?,sakit urat?,muscle pain?,symptoms
+sabah,keno ambil ubat bila bah?,perlu ambil ubat bila?,when take medicine?,medications
+sabah,anak demam berdarah ka?,anak demam berdarah?,child dengue?,symptoms
+sabah,bulih test air kencing ka?,bulih test air kencing?,urine test ok?,clinic_services
+sabah,ado rawatan kulit ka?,ada rawatan kulit?,skin treatment?,clinic_services
+sabah,keno bayar tunai sahaja ka?,perlu bayar tunai sahaja?,cash only?,cost_payment
+sabah,macam mana ukur tekanan darah bah?,macam mana ukur tekanan darah?,check BP how?,clinic_services
+sabah,sakit pinggang bah?,sakit pinggang?,back pain?,symptoms
+sabah,ado ubat alahan ka?,ada ubat alahan?,allergy meds?,medications
+sabah,bulih bawa orang lain ka?,bulih bawa orang lain?,bring extra person?,eligibility
+sabah,klinik ada ultrasound ka?,klinik ada ultrasound?,ultrasound here?,clinic_services
+sabah,keno jumpa doktor perubatan ka?,perlu jumpa doktor perubatan?,GP appointment?,appointment
+sabah,ado vaksin pneumonia ka?,ada vaksin pneumonia?,pneumonia shot?,vaccines
+sabah,muka berbintik bah?,muka berbintik?,face spots?,symptoms
+sabah,ubat keno simpan mana bah?,ubat perlu simpan mana?,store medicine where?,medications
+sabah,ado kaunseling anak ka?,ada kaunseling anak?,kids counseling?,mental_health
+sabah,klinik buka pagi awal ka?,klinik buka pagi awal?,early open?,clinic_services
+sabah,keno puasa test gula ka?,perlu puasa test gula?,fast for sugar test?,clinic_services
+sabah,sakit gigi berlubang ka?,sakit gigi berlubang?,cavity pain?,symptoms
+sabah,bulih claim insurans ka?,bulih claim insurans?,insurance ok?,cost_payment
+sabah,ado doktor sakit wanita ka?,ada doktor sakit wanita?,women's doctor?,clinic_services
+sabah,keno bawa resip lama ka?,perlu bawa resip lama?,old prescription?,documents_needed
+sabah,tangan kebas bah?,tangan kebas?,numb hands?,symptoms
+sabah,ado fisioterapi ka?,ada fisioterapi?,physio available?,clinic_services
+sabah,batuk berdarah ka?,batuk berdarah?,blood cough?,symptoms
+sabah,keno janji doktor pakar ka?,perlu janji doktor pakar?,specialist appt?,appointment
+sabah,ado ubat kencing manis ka?,ada ubat kencing manis?,diabetes meds?,medications
+sabah,klinik ada kerusi roda ka?,klinik ada kerusi roda?,wheelchair?,clinic_services
+sabah,ado vaksin hepatitis ka?,ada vaksin hepatitis?,hep vaccine?,vaccines
+sabah,ado doktor pakar jantung ka?,ada doktor pakar jantung?,heart specialist?,clinic_services
+sabah,sakit kepala pening bah?,sakit kepala pening?,dizzy headache?,symptoms
+sabah,keno vaksin flu tahunan ka?,perlu vaksin flu tahunan?,yearly flu vaccine?,vaccines
+sabah,anak kembung perot bah?,anak kembung perut?,child bloated stomach?,symptoms
+sabah,bulih buat ECG ka?,boleh buat ECG?,ECG possible?,clinic_services
+sabah,ado rawatan jerawat ka?,ada rawatan jerawat?,acne treatment?,clinic_services
+sabah,keno bayar ansur ka?,perlu bayar ansuran?,installment payment?,cost_payment
+sabah,macam mana test HIV bah?,macam mana test HIV?,HIV test how?,clinic_services
+sabah,sakit buku lali bah?,sakit buku lali?,elbow pain?,symptoms
+sabah,ado ubat cirit birit ka?,ada ubat cirit-birit?,diarrhea medicine?,medications
+sabah,bulih bawa cikgu ka?,boleh bawa cikgu?,bring teacher ok?,eligibility
+sabah,klinik ada EKG ka?,klinik ada EKG?,EKG machine?,clinic_services
+sabah,keno dapat surat rujukan ka?,perlu dapat surat rujukan?,need referral?,documents_needed
+sabah,ado vaksin shingle ka?,ada vaksin shingles?,shingles vaccine?,vaccines
+sabah,hidung berair bah?,hidung berair?,runny nose?,symptoms
+sabah,ubat keno makan sebelum tidur ka?,ubat perlu makan sebelum tidur?,medicine before sleep?,medications
+sabah,ado terapi okupasi ka?,ada terapi okupasi?,occupational therapy?,clinic_services
+sabah,klinik buka tengah malam ka?,klinik buka tengah malam?,midnight open?,clinic_services
+sabah,keno test mata tahunan ka?,perlu test mata tahunan?,yearly eye test?,clinic_services
+sabah,sakit leher bah?,sakit leher?,neck pain?,symptoms
+sabah,bulih bayar Touch n Go ka?,boleh bayar guna Touch n Go?,Touch n Go payment?,cost_payment
+sabah,ado doktor pakar kulit ka?,ada doktor pakar kulit?,dermatologist?,clinic_services
+sabah,keno bawa rekod vaksin ka?,perlu bawa rekod vaksin?,vaccine record?,documents_needed
+sabah,kaki kramp bah?,kaki kramp?,leg cramps?,symptoms
+sabah,ado rawatan akupunktur ka?,ada rawatan akupunktur?,acupuncture?,clinic_services
+sabah,mual muntah bah?,mual muntah?,nausea vomiting?,symptoms
+sabah,keno jumpa doktor esok pagi ka?,perlu jumpa doktor pagi esok?,doctor tomorrow morning?,appointment
+sabah,ado ubat kolesterol ka?,ada ubat kolesterol?,cholesterol medicine?,medications
+sabah,klinik ada parking ka?,klinik ada parking?,parking available?,clinic_services
+sabah,ado vaksin rabies ka?,ada vaksin rabies?,rabies vaccine?,vaccines
+sabah,ado doktor tiroid ka?,ada doktor pakar tiroid?,thyroid specialist?,clinic_services
+sabah,sakit telinga bah?,sakit telinga?,ear pain?,symptoms
+sabah,keno test darah penuh ka?,perlu test darah penuh?,full blood test?,clinic_services
+sabah,anak asma bah?,anak asma?,child asthma?,symptoms
+sabah,bulih scan tulang ka?,boleh buat scan tulang?,bone scan?,clinic_services
+sabah,ado rawatan rambut gugur ka?,ada rawatan rambut gugur?,hair loss treatment?,clinic_services
+sabah,keno bayar online ka?,perlu bayar online banking?,online banking payment?,cost_payment
+sabah,macam mana test kanser serviks bah?,macam mana test kanser serviks?,cervical cancer test?,clinic_services
+sabah,sakit pergelangan tangan bah?,sakit pergelangan tangan?,wrist pain?,symptoms
+sabah,ado ubat sakit sendi ka?,ada ubat sakit sendi?,joint pain medicine?,medications
+sabah,bulih bawa pakcik ka?,boleh bawa pakcik?,bring uncle ok?,eligibility
+sabah,klinik ada defibrillator ka?,klinik ada defibrillator?,defibrillator?,clinic_services
+sabah,keno MC sehari ka?,perlu dapat MC sehari?,1 day MC?,documents_needed
+sabah,ado vaksin HPV lelaki ka?,ada vaksin HPV lelaki?,HPV men vaccine?,vaccines
+sabah,gatal seluruh badan bah?,gatal seluruh badan?,itchy all over?,symptoms
+sabah,ubat 3 kali sehari ka?,ubat perlu ambil 3 kali sehari?,medicine 3x day?,medications
+sabah,ado kaunseling pencen ka?,ada kaunseling pencen?,retirement counseling?,mental_health
+sabah,klinik buka sabtu ka?,klinik buka hari sabtu?,saturday open?,clinic_services

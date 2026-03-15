@@ -9,16 +9,32 @@ from medbridge.rag import answer_query
 
 load_dotenv()
 
+def clear_text():
+    st.session_state.user_query = ""
+
 st.set_page_config(page_title="MedBridge AI", layout="wide")
-st.title("MedBridge AI — Dialect-Aware Health Assistant")
+
+st.title("🏥 MedBridge AI")
+
+st.markdown("""
+            ### Your health information assistant
+
+            You can:
+            - Ask in **English, Malay, or your dialect**
+            - **Type** your question or **upload voice**
+            - Get **simple explanations** and **clear steps**
+
+            Ask anything about clinics, health services, or government help.
+            """)
+st.markdown("<hr style='margin-top:5px;margin-bottom:10px;'>", unsafe_allow_html=True)
 
 # UI Improvements
 st.markdown("""
             <style>
             /* Main page padding */
             .block-container {
-                padding-top: 2rem;
-                padding-bottom: 2rem;
+                padding-top: 2.5rem;
+                padding-bottom: 1rem;
             }
 
             /* Title styling */
@@ -48,7 +64,7 @@ st.markdown("""
                 width: 100%;
                 border-radius: 10px;
                 font-weight: 600;
-                padding: 10px;
+                padding: 8px;
             }
 
             /* Sidebar header */
@@ -135,31 +151,54 @@ with st.sidebar:
             ["Malay", "English"]
         )
 
-    input_mode = st.radio(
-        "Input Mode",
-        ["Text", "Voice"]
+st.subheader("Ask Your Question")
+st.subheader("Try asking:")
+
+col1, col2, col3 = st.columns(3)
+
+if col1.button("Nearest clinic"):
+    st.session_state.user_query = "Where is the nearest clinic?"
+
+if col2.button("Vaccination information"):
+    st.session_state.user_query = "How can I get vaccination?"
+
+if col3.button("Government health aid"):
+    st.session_state.user_query = "How do I apply for health assistance?"
+
+input_mode = st.radio(
+    "How would you like to ask?",
+    ["Type your question", "Use voice recording"]
+)
+
+if input_mode == "Type your question":
+    if "user_query" not in st.session_state:
+        st.session_state.user_query= ""
+    user_query = st.text_area(
+    "Type your question here",
+    placeholder="Example: mano nak gi klinik?",
+    height=120,
+    key = "user_query"
     )
+    
+    uploaded_audio = None
+else:
+    uploaded_audio = st.file_uploader(
+        "Upload your voice recording",
+        type=["wav", "mp3", "m4a"]
+    )
+    user_query = ""
 
-    if input_mode == "Text":
-        user_query = st.text_area(
-            "Enter your question",
-            placeholder="Example: mano nak gi klinik?",
-            height=120
-        )
-        uploaded_audio = None
-    else:
-        uploaded_audio = st.file_uploader(
-            "Upload audio file",
-            type=["wav", "mp3", "m4a"]
-        )
-        user_query = ""
+col1, col2 = st.columns(2)
+with col1:
+    run_button = st.button("🔎 Get Help", type="primary")
+with col2:
+    clear_button = st.button("❌ Clear Question", on_click=clear_text)
 
-    run_button = st.button("Get Answer", type="primary")
 
 if run_button:
     raw_query = ""
 
-    if input_mode == "Text":
+    if input_mode == "Type your question":
         raw_query = user_query.strip()
         if not raw_query:
             st.warning("Please enter a question first.")
@@ -244,25 +283,25 @@ if run_button:
             action_steps = translate_text(action_steps, "English")
 
     st.markdown(f"""
-            <div class="card">
-            <h3>🧠 Grounded Answer</h3>
-            <p>{grounded_answer}</p>
-            </div>
-            """, unsafe_allow_html=True)
+<div class="card">
+<h3>📖 Official Information</h3>
+<p>{grounded_answer}</p>
+</div>
+""", unsafe_allow_html=True)
 
     st.markdown(f"""
-                <div class="card">
-                <h3>💡 Simplified Answer</h3>
-                <p>{simplified_answer}</p>
-                </div>
-                """, unsafe_allow_html=True)
+<div class="card">
+<h3>💡 Easy Explanation</h3>
+<p>{simplified_answer}</p>
+</div>
+""", unsafe_allow_html=True)
 
     st.markdown(f"""
-                <div class="card">
-                <h3>⚡ Action Steps</h3>
-                <p>{action_steps}</p>
-                </div>
-                """, unsafe_allow_html=True)
+<div class="card">
+<h3>✅ What You Should Do</h3>
+<p>{action_steps}</p>
+</div>
+""", unsafe_allow_html=True)
 
     st.subheader("Sources Used")
     for i, item in enumerate(result["source_snippets"], start=1):

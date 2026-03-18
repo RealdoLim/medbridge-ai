@@ -13,12 +13,19 @@ GOOGLE_API_KEY=your_key_here
 4. Install dependencies:
 pip install -r requirements.txt
 
-5. Run the app:
+5. Build FAISS Index:
+python -m medbridge.ingest
+
+6. Run Commands:
+- Evaluation Test:
+streamlit run medbridge/eval.py
+- Run the main app:
 streamlit run app.py
+
 =======
 # medbridge-ai
 >>>>>>> 1afab4b7d79576b5f910f7b2ad28e9d1b509b128
-
+3
 
 # References
 Anything Translate. (2024, December 21). Sabah Malay Translator | Free & AI-Powered. https://anythingtranslate.com/translators/sabah-malay-translator/ <br />

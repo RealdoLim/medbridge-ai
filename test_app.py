@@ -76,5 +76,3 @@ def test_transcribe_uploaded_audio(monkeypatch):
     assert result == "clinic"
 
 # Run using: "pytest test_app.py"
-
-#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 

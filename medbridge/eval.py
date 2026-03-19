@@ -55,7 +55,7 @@ EVAL_QUESTIONS = [
     
     # Targeting: RHCH.pdf
     {"id": 18, "query": "Apakah syarat Jabatan Banci AS untuk mengklasifikasikan kawasan sebagai bukan bandar?", "expected_keyword": "census bureau"},
-    {"id": 19, "query": "Bolehkah sesebuah klinik mendapat kelulusan serentak sebagai RHC dan FQHC?", "expected_keyword": "concurrently"},
+    {"id": 19, "query": "Bolehkah sesebugit rm --cached .envah klinik mendapat kelulusan serentak sebagai RHC dan FQHC?", "expected_keyword": "concurrently"},
     {"id": 20, "query": "Adakah rawatan oleh pakar pemakanan berdaftar (dietitian) ditanggung di Klinik Kesihatan Luar Bandar?", "expected_keyword": "dietitians"}
 ]
 

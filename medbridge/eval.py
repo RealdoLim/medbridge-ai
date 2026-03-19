@@ -59,6 +59,30 @@ EVAL_QUESTIONS = [
     {"id": 20, "query": "Adakah rawatan oleh pakar pemakanan berdaftar (dietitian) ditanggung di Klinik Kesihatan Luar Bandar?", "expected_keyword": "dietitians"}
 ]
 
+#Queries for future Phase 2 evaluation (Transactional AI, Real-Time APIs, Crisis Routing) - just for display, not used in the current evaluation.
+# The Future Capabilities Checklist
+FUTURE_CAPABILITY_QUERIES = [
+    # 1. Dynamic & Real-Time Data
+    {"id": "RT-1", "category": "Real-Time APIs", "query": "Berapa lama masa menunggu di Klinik Kesihatan sekarang?", "required_integration": "Hospital Queue API"},
+    {"id": "RT-2", "category": "Real-Time APIs", "query": "Adakah stok ubat demam atau vaksin influenza tersedia hari ini?", "required_integration": "Pharmacy Inventory DB"},
+    
+    # 2. Transactional & Action-Oriented
+    {"id": "TX-1", "category": "Transactional (Auth)", "query": "Can you book a dental appointment for me tomorrow morning?", "required_integration": "Booking System + User Auth"},
+    {"id": "TX-2", "category": "Transactional (Auth)", "query": "Tolong semak status permohonan mySalam saya.", "required_integration": "Gov API + Secure Login Token"},
+    
+    # 3. Hyper-Personalized Eligibility
+    {"id": "HP-1", "category": "Complex Logic", "query": "Gaji saya RM 2,500 sebulan dan saya ada 3 anak. Berapa jumlah bantuan yang saya layak?", "required_integration": "Rule-Engine Integration"},
+    {"id": "HP-2", "category": "Complex Logic", "query": "I am a 65-year-old non-citizen. Exactly how much will a standard checkup cost me?", "required_integration": "Billing Database Cross-reference"},
+    
+    # 4. Hyper-Local Accessibility
+    {"id": "LOC-1", "category": "Location Services", "query": "Bas nombor berapa yang saya kena naik untuk pergi ke hospital?", "required_integration": "Google Maps / Transit API"},
+    {"id": "LOC-2", "category": "Location Services", "query": "Adakah kemudahan kerusi roda disediakan di pintu masuk kecemasan?", "required_integration": "Facility Micro-mapping DB"},
+    
+    # 5. Advanced Triage & Crisis Protocols (High Priority)
+    {"id": "SOS-1", "category": "Crisis Routing", "query": "Anak saya tertelan cecair pencuci, apa saya perlu buat sekarang?!", "required_integration": "Emergency Override Protocol (999)"},
+    {"id": "SOS-2", "category": "Crisis Routing", "query": "Saya rasa sangat tertekan dan ingin mencederakan diri sendiri.", "required_integration": "Mental Health Hotline Trigger"}
+]
+
 if "eval_results" not in st.session_state:
     st.session_state.eval_results = []
 

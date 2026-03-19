@@ -1,5 +1,8 @@
 import pandas as pd
 import streamlit as st
+import pytest
+import os
+
 from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI
 
@@ -117,197 +120,237 @@ Text:
     response = llm.invoke(prompt)
     return response.content if hasattr(response, "content") else str(response)
 
+# For testing purposes, we can mock this function to bypass actual LLM calls and just return a predictable string.
+"""
+def translate_text(text: str, target_language: str) -> str:
+    # TEMPORARY HACKATHON BYPASS: Just return the text with a tag so the UI doesn't crash
+    return f"[Mock {target_language} Translation]: {text}"
+"""
 
+#Load Phrasebank at the start of the app, so it's available globally and only loaded once (cached).
 phrasebank_df = load_phrasebank()
 
-with st.sidebar:
-    st.header("Controls")
 
-    dialect_mode = st.selectbox(
-        "Dialect Mode",
-        ["OFF", "Kelantan", "Sabah"]
-    )
+#Only run UI Code when not in testing mode, to prevent Streamlit errors during pytest runs.
+#Basically, ignore UI if only running tests. Else, run the full Streamlit app.
+if __name__ == "__main__":
 
-    if "reply_in_dialect" not in st.session_state:
-        st.session_state.reply_in_dialect = False
 
-    if dialect_mode == "OFF":
-        st.session_state.reply_in_dialect = False
+    with st.sidebar:
+        st.header("Controls")
 
-    reply_in_dialect = st.checkbox(
-        "Reply in dialect",
-        key="reply_in_dialect",
-        disabled=(dialect_mode == "OFF")
-    )
-
-    if reply_in_dialect and dialect_mode != "OFF":
-        st.markdown(f"**Output Language:** {dialect_mode} dialect")
-        output_language = "Dialect"
-        st.caption("Output language is locked because reply in dialect is enabled.")
-        st.caption("Final answer will be rewritten fully into the selected dialect.")
-    else:
-        output_language = st.selectbox(
-            "Output Language",
-            ["Malay", "English"]
+        dialect_mode = st.selectbox(
+            "Dialect Mode",
+            ["OFF", "Kelantan", "Sabah"]
         )
 
-st.subheader("Ask Your Question")
-st.subheader("Try asking:")
+        if "reply_in_dialect" not in st.session_state:
+            st.session_state.reply_in_dialect = False
 
-col1, col2, col3 = st.columns(3)
+        if dialect_mode == "OFF":
+            st.session_state.reply_in_dialect = False
 
-if col1.button("Nearest clinic"):
-    st.session_state.user_query = "Where is the nearest clinic?"
+        reply_in_dialect = st.checkbox(
+            "Reply in dialect",
+            key="reply_in_dialect",
+            disabled=(dialect_mode == "OFF")
+        )
 
-if col2.button("Vaccination information"):
-    st.session_state.user_query = "How can I get vaccination?"
+        if reply_in_dialect and dialect_mode != "OFF":
+            st.markdown(f"**Output Language:** {dialect_mode} dialect")
+            output_language = "Dialect"
+            st.caption("Output language is locked because reply in dialect is enabled.")
+            st.caption("Final answer will be rewritten fully into the selected dialect.")
+        else:
+            output_language = st.selectbox(
+                "Output Language",
+                ["Malay", "English"]
+            )
+        
+        """
+        # ==========================================
+        # DEVELOPER DASHBOARD (!!!FOR DEMO ONLY!!!) - NOT PART OF CORE FUNCTIONALITY
+        # ==========================================
+        # Note (Ekin): Remove this on final production code - it's only for demo/testing purposes to show that tests are passing in real-time.
+        # ==========================================
+        # It acts as a live "System Check" to prove to the judges that our 
+        # translation and simplification logic (in test_app.py) is robust and passing.
 
-if col3.button("Government health aid"):
-    st.session_state.user_query = "How do I apply for health assistance?"
+        st.markdown("---")
+        st.subheader("🛠️ Developer Tools")
 
-input_mode = st.radio(
-    "How would you like to ask?",
-    ["Type your question", "Use voice recording"]
-)
+        # Programmatically triggers pytest when the button is clicked
+        if st.button("Run System Diagnostics"):
+            with st.spinner("Running AI Tests..."):
+                
+                # The "-q" (quiet) flag prevents pytest from spamming the terminal with text
+                exit_code = pytest.main(["test_app.py", "-q"])
+                
+                # exit_code 0 means All tests passed successfully
+                if exit_code == 0:
+                    st.success("✅ All systems functional!")
+                else:
+                    st.error("❌ Tests failed. Check terminal for details.")
+        # ==========================================
+        """
 
-if input_mode == "Type your question":
-    if "user_query" not in st.session_state:
-        st.session_state.user_query= ""
-    user_query = st.text_area(
-    "Type your question here",
-    placeholder="Example: mano nak gi klinik?",
-    height=120,
-    key = "user_query"
+    st.subheader("Ask Your Question")
+    st.subheader("Try asking:")
+
+    col1, col2, col3 = st.columns(3)
+
+    if col1.button("Nearest clinic"):
+        st.session_state.user_query = "Where is the nearest clinic?"
+
+    if col2.button("Vaccination information"):
+        st.session_state.user_query = "How can I get vaccination?"
+
+    if col3.button("Government health aid"):
+        st.session_state.user_query = "How do I apply for health assistance?"
+
+    input_mode = st.radio(
+        "How would you like to ask?",
+        ["Type your question", "Use voice recording"]
     )
-    
-    uploaded_audio = None
-else:
-    uploaded_audio = st.file_uploader(
-        "Upload your voice recording",
-        type=["wav", "mp3", "m4a"]
-    )
-    user_query = ""
-
-col1, col2 = st.columns(2)
-with col1:
-    run_button = st.button("🔎 Get Help", type="primary")
-with col2:
-    clear_button = st.button("❌ Clear Question", on_click=clear_text)
-
-
-if run_button:
-    raw_query = ""
 
     if input_mode == "Type your question":
-        raw_query = user_query.strip()
-        if not raw_query:
-            st.warning("Please enter a question first.")
-            st.stop()
+        if "user_query" not in st.session_state:
+            st.session_state.user_query= ""
+        user_query = st.text_area(
+        "Type your question here",
+        placeholder="Example: mano nak gi klinik?",
+        height=120,
+        key = "user_query"
+        )
+        
+        uploaded_audio = None
     else:
-        if uploaded_audio is None:
-            st.warning("Please upload an audio file first.")
-            st.stop()
-
-        with st.spinner("Transcribing audio..."):
-            raw_query = transcribe_uploaded_audio(uploaded_audio)
-
-        st.subheader("Transcript")
-        st.write(raw_query)
-
-        if not raw_query:
-            st.warning("Could not transcribe the audio.")
-            st.stop()
-
-    interpreted_query = raw_query
-
-    if dialect_mode != "OFF":
-        interpreted_query = normalize_to_standard(
-            raw_query,
-            dialect_mode.lower(),
-            phrasebank_df
+        uploaded_audio = st.file_uploader(
+            "Upload your voice recording",
+            type=["wav", "mp3", "m4a"]
         )
+        user_query = ""
 
-    st.subheader("We interpreted your dialect as:")
+    col1, col2 = st.columns(2)
+    with col1:
+        run_button = st.button("🔎 Get Help", type="primary")
+    with col2:
+        clear_button = st.button("❌ Clear Question", on_click=clear_text)
 
-    st.markdown(f"""
-                <div style="
-                background:#1e293b;
-                padding:16px;
-                border-radius:10px;
-                border:1px solid #374151;
-                margin-bottom:20px;
-                font-size:16px;">
-                {interpreted_query}
-                </div>
-                """, unsafe_allow_html=True)
 
-    if reply_in_dialect and dialect_mode != "OFF":
-        st.info(f"Final answer will be rewritten into {dialect_mode} dialect.")
+    if run_button:
+        raw_query = ""
 
-    with st.spinner("Searching official docs and generating answer..."):
-        result = answer_query(interpreted_query)
+        if input_mode == "Type your question":
+            raw_query = user_query.strip()
+            if not raw_query:
+                st.warning("Please enter a question first.")
+                st.stop()
+        else:
+            if uploaded_audio is None:
+                st.warning("Please upload an audio file first.")
+                st.stop()
 
-    grounded_answer = result["grounded_answer"] or "not found in docs"
-    simplified_answer = result["simplified_answer"] or "not found in docs"
-    action_steps = result["action_steps"] or "- not found in docs"
+            with st.spinner("Transcribing audio..."):
+                raw_query = transcribe_uploaded_audio(uploaded_audio)
 
-    # Dialect reply overrides normal output language.
-    if reply_in_dialect and dialect_mode != "OFF":
-        grounded_answer = translate_text(grounded_answer, "Bahasa Melayu")
-        simplified_answer = translate_text(simplified_answer, "Bahasa Melayu")
-        action_steps = translate_text(action_steps, "Bahasa Melayu")
+            st.subheader("Transcript")
+            st.write(raw_query)
 
-        grounded_answer = rewrite_fully_to_dialect(
-            grounded_answer,
-            dialect_mode.lower(),
-            phrasebank_df
-        )
-        simplified_answer = rewrite_fully_to_dialect(
-            simplified_answer,
-            dialect_mode.lower(),
-            phrasebank_df
-        )
-        action_steps = rewrite_fully_to_dialect(
-            action_steps,
-            dialect_mode.lower(),
-            phrasebank_df
-        )
-    else:
-        if output_language == "Malay":
+            if not raw_query:
+                st.warning("Could not transcribe the audio.")
+                st.stop()
+
+        interpreted_query = raw_query
+
+        if dialect_mode != "OFF":
+            interpreted_query = normalize_to_standard(
+                raw_query,
+                dialect_mode.lower(),
+                phrasebank_df
+            )
+
+        st.subheader("We interpreted your dialect as:")
+
+        st.markdown(f"""
+                    <div style="
+                    background:#1e293b;
+                    padding:16px;
+                    border-radius:10px;
+                    border:1px solid #374151;
+                    margin-bottom:20px;
+                    font-size:16px;">
+                    {interpreted_query}
+                    </div>
+                    """, unsafe_allow_html=True)
+
+        if reply_in_dialect and dialect_mode != "OFF":
+            st.info(f"Final answer will be rewritten into {dialect_mode} dialect.")
+
+        with st.spinner("Searching official docs and generating answer..."):
+            result = answer_query(interpreted_query)
+
+        grounded_answer = result["grounded_answer"] or "not found in docs"
+        simplified_answer = result["simplified_answer"] or "not found in docs"
+        action_steps = result["action_steps"] or "- not found in docs"
+
+        # Dialect reply overrides normal output language.
+        if reply_in_dialect and dialect_mode != "OFF":
             grounded_answer = translate_text(grounded_answer, "Bahasa Melayu")
             simplified_answer = translate_text(simplified_answer, "Bahasa Melayu")
             action_steps = translate_text(action_steps, "Bahasa Melayu")
+
+            grounded_answer = rewrite_fully_to_dialect(
+                grounded_answer,
+                dialect_mode.lower(),
+                phrasebank_df
+            )
+            simplified_answer = rewrite_fully_to_dialect(
+                simplified_answer,
+                dialect_mode.lower(),
+                phrasebank_df
+            )
+            action_steps = rewrite_fully_to_dialect(
+                action_steps,
+                dialect_mode.lower(),
+                phrasebank_df
+            )
         else:
-            grounded_answer = translate_text(grounded_answer, "English")
-            simplified_answer = translate_text(simplified_answer, "English")
-            action_steps = translate_text(action_steps, "English")
+            if output_language == "Malay":
+                grounded_answer = translate_text(grounded_answer, "Bahasa Melayu")
+                simplified_answer = translate_text(simplified_answer, "Bahasa Melayu")
+                action_steps = translate_text(action_steps, "Bahasa Melayu")
+            else:
+                grounded_answer = translate_text(grounded_answer, "English")
+                simplified_answer = translate_text(simplified_answer, "English")
+                action_steps = translate_text(action_steps, "English")
 
-    st.markdown(f"""
-<div class="card">
-<h3>📖 Official Information</h3>
-<p>{grounded_answer}</p>
-</div>
-""", unsafe_allow_html=True)
+        st.markdown(f"""
+    <div class="card">
+    <h3>📖 Official Information</h3>
+    <p>{grounded_answer}</p>
+    </div>
+    """, unsafe_allow_html=True)
 
-    st.markdown(f"""
-<div class="card">
-<h3>💡 Easy Explanation</h3>
-<p>{simplified_answer}</p>
-</div>
-""", unsafe_allow_html=True)
+        st.markdown(f"""
+    <div class="card">
+    <h3>💡 Easy Explanation</h3>
+    <p>{simplified_answer}</p>
+    </div>
+    """, unsafe_allow_html=True)
 
-    st.markdown(f"""
-<div class="card">
-<h3>✅ What You Should Do</h3>
-<p>{action_steps}</p>
-</div>
-""", unsafe_allow_html=True)
+        st.markdown(f"""
+    <div class="card">
+    <h3>✅ What You Should Do</h3>
+    <p>{action_steps}</p>
+    </div>
+    """, unsafe_allow_html=True)
 
-    st.subheader("Sources Used")
-    for i, item in enumerate(result["source_snippets"], start=1):
-        source = item.get("source", "unknown")
-        page = item.get("page", "unknown")
-        snippet = item.get("snippet", "")
+        st.subheader("Sources Used")
+        for i, item in enumerate(result["source_snippets"], start=1):
+            source = item.get("source", "unknown")
+            page = item.get("page", "unknown")
+            snippet = item.get("snippet", "")
 
-        with st.expander(f"Source {i}: {source} (page {page})"):
-            st.write(snippet)
+            with st.expander(f"Source {i}: {source} (page {page})"):
+                st.write(snippet)

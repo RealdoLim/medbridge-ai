@@ -1,3 +1,4 @@
+
 # Python cache
 __pycache__/
 *.pyc
@@ -7,10 +8,11 @@ __pycache__/
 
 # Virtual environment
 venv/
-.env/
+.venv/
 
 # Environment variables
 .env
+.env/
 
 # Test files
 *.mp3
@@ -18,6 +20,7 @@ venv/
 *.m4a
 test_audio.py 
 testfile.py
+test_app.py
 
 # Generated index files
 data/index/

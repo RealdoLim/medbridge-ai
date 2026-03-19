@@ -99,7 +99,7 @@ def get_llm():
     )
 
 
-# def translate_text(text: str, target_language: str) -> str:
+def translate_text(text: str, target_language: str) -> str:
     if not text:
         return text
 
@@ -120,9 +120,12 @@ Text:
     response = llm.invoke(prompt)
     return response.content if hasattr(response, "content") else str(response)
 
+# For testing purposes, we can mock this function to bypass actual LLM calls and just return a predictable string.
+"""
 def translate_text(text: str, target_language: str) -> str:
     # TEMPORARY HACKATHON BYPASS: Just return the text with a tag so the UI doesn't crash
     return f"[Mock {target_language} Translation]: {text}"
+"""
 
 #Load Phrasebank at the start of the app, so it's available globally and only loaded once (cached).
 phrasebank_df = load_phrasebank()

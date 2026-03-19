@@ -20,6 +20,7 @@ venv/
 *.m4a
 test_audio.py 
 testfile.py
+test_app.py
 
 # Generated index files
 data/index/

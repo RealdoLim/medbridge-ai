@@ -13,3 +13,4 @@ numpy
 rapidfuzz
 faster-whisper
 soundfile
+pytest

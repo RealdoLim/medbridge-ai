@@ -239,6 +239,11 @@ Activate it:
 source .venv/bin/activate
 ```
 
+</br>If you encounter an error like "...cannot be loaded because running scripts is disabled on this system." please run the following command:
+```bash
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
 ### 3. Install dependencies
 ```bash
 pip install -r requirements.txt
